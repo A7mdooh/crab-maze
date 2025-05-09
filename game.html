@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لعبة المتاهة</title>
+  <title>لعبة متاهة السلطعون</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- رأس الصفحة: المعلومات -->
   <header>
     <div class="top-info">
       <div>🧩 <strong>التلميح:</strong> <span id="hint-text"></span></div>
@@ -16,17 +18,21 @@
       <div>⏱️ <strong>الوقت:</strong> <span id="timer">00:00</span></div>
       <div>❤️ <strong>المحاولات:</strong> <span id="attempts">3</span></div>
     </div>
+
     <div class="progress">
       <div class="progress-bar" id="progress-bar"></div>
     </div>
-    <div>
+
+    <div class="target-word">
       ✨ <strong>الكلمة المستهدفة:</strong> <span id="hidden-word">⭐⭐⭐</span>
     </div>
   </header>
 
+  <!-- محتوى اللعبة -->
   <main>
     <div class="maze-container" id="maze"></div>
 
+    <!-- أزرار التحكم للهاتف -->
     <div class="controls">
       <div><button onclick="move('up')">⬆️</button></div>
       <div>
@@ -36,12 +42,13 @@
       </div>
     </div>
 
+    <!-- زر المساعدة -->
     <div style="text-align: center; margin-top: 1rem;">
       <button id="hint-btn" onclick="useHint()">💡 مساعدة</button>
     </div>
   </main>
 
-  <!-- Lose modal -->
+  <!-- نافذة الخسارة -->
   <div id="lose-modal" style="display: none;">
     <div>
       <h2>❌ انتهت المحاولات</h2>
@@ -50,11 +57,12 @@
     </div>
   </div>
 
-  <!-- Audio -->
+  <!-- المؤثرات الصوتية -->
   <audio id="sound-correct" src="assets/sounds/correct.mp3"></audio>
   <audio id="sound-wrong" src="assets/sounds/wrong.mp3"></audio>
   <audio id="sound-win" src="assets/sounds/win.mp3"></audio>
 
+  <!-- منطق اللعبة -->
   <script src="js/game.js"></script>
 </body>
 </html>
