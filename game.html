@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة المتاهة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="top-info">
+      <div>🧩 <strong>التلميح:</strong> <span id="hint-text"></span></div>
+      <div>👤 <strong id="player-name"></strong> - <span id="player-desc"></span></div>
+      <div>⚙️ <strong>الصعوبة:</strong> <span id="difficulty-label"></span></div>
+      <div>⏱️ <strong>الوقت:</strong> <span id="timer">00:00</span></div>
+      <div>❤️ <strong>المحاولات:</strong> <span id="attempts">3</span></div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div>
+      ✨ <strong>الكلمة المستهدفة:</strong> <span id="hidden-word">⭐⭐⭐</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="maze-container" id="maze"></div>
+
+    <div class="controls">
+      <div><button onclick="move('up')">⬆️</button></div>
+      <div>
+        <button onclick="move('left')">⬅️</button>
+        <button onclick="move('down')">⬇️</button>
+        <button onclick="move('right')">➡️</button>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 1rem;">
+      <button id="hint-btn" onclick="useHint()">💡 مساعدة</button>
+    </div>
+  </main>
+
+  <!-- Lose modal -->
+  <div id="lose-modal" style="display: none;">
+    <div>
+      <h2>❌ انتهت المحاولات</h2>
+      <p id="missing-letters">لم تجمع كل الحروف المطلوبة.</p>
+      <button onclick="retryGame()">🔁 إعادة المحاولة</button>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="sound-correct" src="assets/sounds/correct.mp3"></audio>
+  <audio id="sound-wrong" src="assets/sounds/wrong.mp3"></audio>
+  <audio id="sound-win" src="assets/sounds/win.mp3"></audio>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
